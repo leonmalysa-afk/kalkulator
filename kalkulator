@@ -1,0 +1,219 @@
+import math
+
+print("Bryly - a | Plaskie - b")
+inp = input("inp: ").lower().strip()
+
+if inp == "a":
+    print("PcBryly - a | VBryly - b")
+    inp = input("inp: ").lower().strip()
+
+    if inp == "a":
+        print("PcSzescianu - a | PcProstopadloscianu - b | PcGraniastoslupa - c | PcOstroslupa - d | PcWalca - e | PcStozka - f | PcKuli - g")
+        inp = input("inp: ").lower().strip()
+
+        if inp == "a":
+            a = float(input("a = "))
+            print(f"PcSzescianu o boku {a} = {6 * a**2}")
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print(f"PcProstopadloscianu o bokach {a}, {b}, {c} = {2*a*b + 2*b*c + 2*c*a}")
+
+        elif inp == "c":
+            Pp = float(input("Pp = "))
+            Pb = float(input("Pb = "))
+            print(f"PcGraniastoslupa = {2 * Pp + Pb}")
+
+        elif inp == "d":
+            Pp = float(input("Pp = "))
+            Pb = float(input("Pb = "))
+            print(f"PcOstroslupa = {Pp + Pb}")
+
+        elif inp == "e":
+            r = float(input("r = "))
+            H = float(input("H = "))
+            print(f"PcWalca = {2 * math.pi * r**2 + 2 * math.pi * r * H}")
+
+        elif inp == "f":
+            r = float(input("r = "))
+            l = float(input("l = "))
+            print(f"PcStozka = {math.pi * r**2 + math.pi * r * l}")
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print(f"PcKuli = {4 * math.pi * r**2}")
+
+        else:
+            print("Nie ma takiej komendy")
+
+    elif inp == "b":
+        print("VSzescianu - a VProstopadloscianu - b VGraniastoslupa - c VOstroslupa - d VWalca - e VStozka - f VKuli - g")
+        inp = input("inp: ").lower().strip()
+
+        if inp == "a":
+            a = float(input("a = "))
+            print(f"VSzescianu = {a**3}")
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print(f"VProstopadloscianu = {a * b * c}")
+
+        elif inp == "c":
+            Pp = float(input("Pp = "))
+            H = float(input("H = "))
+            print(f"VGraniastoslupa = {Pp * H}")
+
+        elif inp == "d":
+            Pp = float(input("Pp = "))
+            H = float(input("H = "))
+            print(f"VOstroslupa = {(1/3) * Pp * H}")
+
+        elif inp == "e":
+            r = float(input("r = "))
+            H = float(input("H = "))
+            print(f"V Walca = {math.pi * r**2 * H}")
+
+        elif inp == "f":
+            r = float(input("r = "))
+            H = float(input("H = "))
+            print(f"VStozka = {(1/3) * math.pi * r**2 * H}")
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print(f"VKuli = {(4/3) * math.pi * r**3}")
+
+        else:
+            print("Nie ma takiej komendy")
+
+    else:
+        print("Nie ma takiej komendy")
+
+elif inp == "b":
+    print("Obwody figur plaskich - a | Pola figur plaskich - b | Inne wzory plaskie - c")
+    inp = input("inp: ").lower().strip()
+
+    if inp == "a":
+        print("ObwKwadratu - a | ObwProstokata - b | ObwRownolegloboku - c | ObwTrapezu - d | ObwTrojkata - e | ObwTrojkataRownobocznego - f | ObwKola - g | ObwRombu - h")
+        inp = input("inp: ").lower().strip()
+
+        if inp == "a":
+            a = float(input("a = "))
+            print(f"ObwKwadratu = {4 * a}")
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print(f"ObwProstokata = {2 * a + 2 * b}")
+
+        elif inp == "c":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print(f"ObwRownolegloboku = {2 * a + 2 * b}")
+
+        elif inp == "d":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            d = float(input("d = "))
+            print(f"ObwTrapezu = {a + b + c + d}")
+
+        elif inp == "e":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print(f"ObwTrojkata = {a + b + c}")
+
+        elif inp == "f":
+            a = float(input("a = "))
+            print(f"ObwTrojkataRownobocznego = {3 * a}")
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print(f"ObwKola = {2 * math.pi * r}")
+
+        elif inp == "h":
+            a = float(input("a = "))
+            print(f"ObwRombu = {4 * a}")
+
+        else:
+            print("Nie ma takiej komendy")
+
+    elif inp == "b":
+        print("PKwadratu - a | PProstokata - b | PRownolegloboku - c | PTrapezu - d | PTrojkata - e | PTrojkataRownobocznego - f | PKola - g | PRombu(z h) - h | PRombu(z e,f) - i")
+        inp = input("inp: ").lower().strip()
+
+        if inp == "a":
+            a = float(input("a = "))
+            print(f"PKwadratu = {a**2}")
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print(f"PProstokata = {a * b}")
+
+        elif inp == "c":
+            a = float(input("a = "))
+            h = float(input("h = "))
+            print(f"PRownolegloboku = {a * h}")
+
+        elif inp == "d":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            h = float(input("h = "))
+            print(f"PTrapezu = {((a + b) * h) / 2}")
+
+        elif inp == "e":
+            a = float(input("a = "))
+            h = float(input("h = "))
+            print(f"PTrojkata = {0.5 * a * h}")
+
+        elif inp == "f":
+            a = float(input("a = "))
+            print(f"PTrojkataRownobocznego = {(a**2 * math.sqrt(3)) / 4}")
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print(f"PKola = {math.pi * r**2}")
+
+        elif inp == "h":
+            a = float(input("a = "))
+            h = float(input("h = "))
+            print(f"PRombu = {a * h}")
+
+        elif inp == "i":
+            e = float(input("e = "))
+            f = float(input("f = "))
+            print(f"PRombu = {(e * f) / 2}")
+
+        else:
+            print("Nie ma takiej komendy")
+
+    elif inp == "c":
+        print("hTrojkataRownobocznego - a | PrzekatnaKwadratu - b | TwierdzeniePitagorasa - c")
+        inp = input("inp: ").lower().strip()
+
+        if inp == "a":
+            a = float(input("a = "))
+            print(f"hTrojkataRownobocznego = {(a * math.sqrt(3)) / 2}")
+
+        elif inp == "b":
+            a = float(input("a = "))
+            print(f"PrzekatnaKwadratu = {a * math.sqrt(2)}")
+
+        elif inp == "c":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print(f"Przeciwprostokatna c = {math.sqrt(a**2 + b**2)}")
+
+        else:
+            print("Nie ma takiej komendy")
+
+    else:
+        print("Nie ma takiej komendy")
+
+else:
+    print("Nie ma takiej komendy")
