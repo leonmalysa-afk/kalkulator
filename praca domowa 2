@@ -1,0 +1,49 @@
+import math
+r = float(input("Podaj promien kuli: "))
+v = 4/3 * math.pi * r**3
+print("Objetosc kuli wynosi:", v)
+
+
+
+n = int(input("Podaj ile razy: "))
+i = 0
+while i < n:
+    print("kocham programowac")
+    i = i + 1
+
+
+
+suma = 0
+liczba = input("Podaj liczbe lub stop: ")
+
+while liczba != "stop":
+    suma = suma + float(liczba)
+    liczba = input("Podaj liczbe lub stop: ")
+print("Suma wynosi:", suma)
+
+
+suma = 0
+ile = 0
+
+liczba = input("Podaj liczbe lub stop: ")
+
+while liczba != "stop":
+    suma = suma + float(liczba)
+    ile = ile + 1
+    liczba = input("Podaj liczbe lub stop: ")
+if ile > 0:
+    srednia = suma / ile
+    print("Srednia wynosi:", srednia)
+else:
+    print("Nie podano liczb")
+
+
+
+n = int(input("Podaj n: "))
+
+suma = 0
+i = 0
+while i < n:
+    suma = suma + 2**i
+    i = i + 1
+print("Suma wynosi:", suma)
