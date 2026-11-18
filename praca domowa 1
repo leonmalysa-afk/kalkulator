@@ -1,0 +1,85 @@
+Python
+from random import randint
+
+
+
+# 1. Wygeneruj tablicę zawierającą n losowych elementów. Z zakresem min i max.
+n = 10
+x = []
+for _ in range(n):
+    x.append(randint(1, 10))
+print(f"1. Wygenerowana tablica: {x}")
+
+
+# 2. Napisz program (nie max, min) znajdujący max i min wartość. Tablica zawiera 1,1,1,5,5,-2,10,1
+x = [1, 1, 1, 5, 5, -2, 10, 1]
+minimum = x[0]
+maximum = x[0]
+for el in x:
+    if el < minimum:
+        minimum = el
+    if el > maximum:
+        maximum = el
+print(f"2. Tablica: {x} | Min: {minimum}, Max: {maximum}")
+
+
+# 3. Napisz program, który powie ile razy powtórzył się n element na tablicy.
+szukany = 1
+licznik = 0
+for el in x:
+    if el == szukany:
+        licznik += 1
+print(f"3. Element {szukany} powtórzył się {licznik} razy.")
+
+
+# 4. Sprawdź ile liczb podzielnych przez n zawiera ta tablica.
+dzielnik = 2
+ile_podzielnych = 0
+for el in x:
+    if el % dzielnik == 0:
+        ile_podzielnych += 1
+print(f"4. Liczb podzielnych przez {dzielnik}: {ile_podzielnych}")
+
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+# 1. Masz tablice A przepisz do 2 tablice liczby podzielne przez 7.
+tab_2 = []
+for el in tablica_A:
+    if el % 7 == 0:
+        tab_2.append(el)
+print(f"1. Podzielne przez 7 w 2. tablicy: {tab_2}")
+
+
+# 2. Zsumuj liczby z tablicy, które są podzielne przez a.
+a = 7
+suma = 0
+for el in tablica_A:
+    if el % a == 0:
+        suma += el
+print(f"2. Suma podzielnych przez {a}: {suma}")
+
+
+# 3. Ile raz powtarza się x element w talicy.
+x = 7
+ile = 0
+for el in tablica_A:
+    if el == x:
+        ile += 1
+print(f"3. Element {x} powtórzył się {ile} razy.")
+
+
+# 4. Pod jakimi indeksami znajdują się minimalne wartości.
+minimum = tablica_A[0]
+for el in tablica_A:
+    if el < minimum:
+        minimum = el
+
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+
+
+
