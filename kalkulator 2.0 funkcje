@@ -1,0 +1,483 @@
+MAIN
+
+
+
+
+import funkcje.plaskie as pl
+import funkcje.bryly as br
+import funkcje.warunki as wa
+
+
+def main():
+    while True:
+        print("a - Figury płaskie")
+        print("b - Bryły")
+        print("c - Warunki")
+        print("e - Zakończ program")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "e":
+            print("Program zakończył działanie")
+            break
+        elif inp == "a":
+            pl.plaskie()
+        elif inp == "b":
+            br.bryly()
+        elif inp == "c":
+            wa.warunki()
+        else:
+            print("Nie ma takiej opcji")
+
+
+main()
+
+
+
+PLASKIE
+
+
+
+
+import math
+
+def pp_kwadratu(a: float) -> float:
+    return a**2
+
+def pp_prostokata(a: float, b: float) -> float:
+    return a*b
+
+def pp_rownolegloboku(a: float, h: float) -> float:
+    return a*h
+
+def pp_trapezu(a: float, b: float, h: float) -> float:
+    return (a+b)*h/2
+
+def pp_trojkata(a: float, h: float) -> float:
+    return a*h/2
+
+def pp_trojkata_rownobocznego(a: float) -> float:
+    return a**2*math.sqrt(3)/4
+
+def pp_kola(r: float) -> float:
+    return math.pi*r**2
+
+def pp_rombu(a: float, h: float) -> float:
+    return a*h
+
+def pp_rombu_przekatne(e: float, f: float) -> float:
+    return e*f/2
+
+def obw_kwadratu(a: float) -> float:
+    return 4*a
+
+def obw_prostokata(a: float, b: float) -> float:
+    return 2*a+2*b
+
+def obw_rownolegloboku(a: float, b: float) -> float:
+    return 2*a+2*b
+
+def obw_trapezu(a: float, b: float, c: float, d: float) -> float:
+    return a+b+c+d
+
+def obw_trojkata(a: float, b: float, c: float) -> float:
+    return a+b+c
+
+def obw_trojkata_rownobocznego(a: float) -> float:
+    return 3*a
+
+def obw_kola(r: float) -> float:
+    return 2*math.pi*r
+
+def obw_rombu(a: float) -> float:
+    return 4*a
+
+def legenda_pp():
+    print("a - Kwadrat")
+    print("b - Prostokąt")
+    print("c - Równoległobok")
+    print("d - Trapez")
+    print("e - Trójkąt")
+    print("f - Trójkąt równoboczny")
+    print("g - Koło")
+    print("h - Romb")
+    print("x - Powrót")
+
+
+def jakie_pp():
+    while True:
+        legenda_pp()
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "x":
+            break
+
+        elif inp == "a":
+            a = float(input("a = "))
+            print("Pole kwadratu =", pp_kwadratu(a))
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print("Pole prostokąta =", pp_prostokata(a,b))
+
+        elif inp == "c":
+            a = float(input("a = "))
+            h = float(input("h = "))
+            print("Pole równoległoboku =", pp_rownolegloboku(a,h))
+
+        elif inp == "d":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            h = float(input("h = "))
+            print("Pole trapezu =", pp_trapezu(a,b,h))
+
+        elif inp == "e":
+            a = float(input("a = "))
+            h = float(input("h = "))
+            print("Pole trójkąta =", pp_trojkata(a,h))
+
+        elif inp == "f":
+            a = float(input("a = "))
+            print("Pole trójkąta równobocznego =", pp_trojkata_rownobocznego(a))
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print("Pole koła =", pp_kola(r))
+
+        elif inp == "h":
+            print("a - z wysokości")
+            print("b - z przekątnych")
+            wybor = input("Wybierz: ").lower()
+
+            if wybor == "a":
+                a = float(input("a = "))
+                h = float(input("h = "))
+                print("Pole rombu =", pp_rombu(a,h))
+            elif wybor == "b":
+                e = float(input("e = "))
+                f = float(input("f = "))
+                print("Pole rombu =", pp_rombu_przekatne(e,f))
+
+        else:
+            print("Nie ma takiej opcji")
+
+
+def legenda_obw():
+    print("a - Kwadrat")
+    print("b - Prostokąt")
+    print("c - Równoległobok")
+    print("d - Trapez")
+    print("e - Trójkąt")
+    print("f - Trójkąt równoboczny")
+    print("g - Koło")
+    print("h - Romb")
+    print("x - Powrót")
+
+
+def jaki_obw():
+    while True:
+        legenda_obw()
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "x":
+            break
+
+        elif inp == "a":
+            a = float(input("a = "))
+            print("Obwód kwadratu =", obw_kwadratu(a))
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print("Obwód prostokąta =", obw_prostokata(a,b))
+
+        elif inp == "c":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            print("Obwód równoległoboku =", obw_rownolegloboku(a,b))
+
+        elif inp == "d":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            d = float(input("d = "))
+            print("Obwód trapezu =", obw_trapezu(a,b,c,d))
+
+        elif inp == "e":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Obwód trójkąta =", obw_trojkata(a,b,c))
+
+        elif inp == "f":
+            a = float(input("a = "))
+            print("Obwód trójkąta równobocznego =", obw_trojkata_rownobocznego(a))
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print("Obwód koła =", obw_kola(r))
+
+        elif inp == "h":
+            a = float(input("a = "))
+            print("Obwód rombu =", obw_rombu(a))
+
+        else:
+            print("Nie ma takiej opcji")
+
+
+def plaskie():
+    while True:
+        print("\n========== FIGURY PŁASKIE ==========")
+        print("a - Pola figur płaskich")
+        print("b - Obwody figur płaskich")
+        print("x - Powrót")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "a":
+            jakie_pp()
+        elif inp == "b":
+            jaki_obw()
+        elif inp == "x":
+            break
+        else:
+            print("Nie ma takiej opcji")
+
+
+
+
+BRYLY
+
+
+
+import math
+
+def pc_szescianu(a: float) -> float:
+    return 6*a**2
+
+def pc_prostopadloscianu(a: float, b: float, c: float) -> float:
+    return 2*a*b+2*a*c+2*b*c
+
+def pc_graniastoslupa(pp: float, pb: float) -> float:
+    return 2*pp+pb
+
+def pc_ostroslupa(pp: float, pb: float) -> float:
+    return pp+pb
+
+def pc_walca(r: float, h: float) -> float:
+    return 2*math.pi*r**2+2*math.pi*r*h
+
+def pc_stozka(r: float, l: float) -> float:
+    return math.pi*r**2+math.pi*r*l
+
+def pc_kuli(r: float) -> float:
+    return 4*math.pi*r**2
+
+def v_szescianu(a: float) -> float:
+    return a**3
+
+def v_prostopadloscianu(a: float, b: float, c: float) -> float:
+    return a*b*c
+
+def v_graniastoslupa(pp: float, h: float) -> float:
+    return pp*h
+
+def v_ostroslupa(pp: float, h: float) -> float:
+    return pp*h/3
+
+def v_walca(r: float, h: float) -> float:
+    return math.pi*r**2*h
+
+def v_stozka(r: float, h: float) -> float:
+    return math.pi*r**2*h/3
+
+def v_kuli(r: float) -> float:
+    return 4/3*math.pi*r**3
+
+def jakie_pc():
+    while True:
+        print("a - Sześcian")
+        print("b - Prostopadłościan")
+        print("c - Graniastosłup")
+        print("d - Ostrosłup")
+        print("e - Walec")
+        print("f - Stożek")
+        print("g - Kula")
+        print("x - Powrót")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "x":
+            break
+
+        elif inp == "a":
+            a = float(input("a = "))
+            print("Pole powierzchni sześcianu =", pc_szescianu(a))
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Pole powierzchni prostopadłościanu =", pc_prostopadloscianu(a,b,c))
+
+        elif inp == "c":
+            pp = float(input("Pole podstawy = "))
+            pb = float(input("Pole powierzchni bocznej = "))
+            print("Pole powierzchni graniastosłupa =", pc_graniastoslupa(pp,pb))
+
+        elif inp == "d":
+            pp = float(input("Pole podstawy = "))
+            pb = float(input("Pole powierzchni bocznej = "))
+            print("Pole powierzchni ostrosłupa =", pc_ostroslupa(pp,pb))
+
+        elif inp == "e":
+            r = float(input("r = "))
+            h = float(input("h = "))
+            print("Pole powierzchni walca =", pc_walca(r,h))
+
+        elif inp == "f":
+            r = float(input("r = "))
+            l = float(input("l = "))
+            print("Pole powierzchni stożka =", pc_stozka(r,l))
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print("Pole powierzchni kuli =", pc_kuli(r))
+
+        else:
+            print("Nie ma takiej opcji")
+
+def jakie_v():
+    while True:
+        print("a - Sześcian")
+        print("b - Prostopadłościan")
+        print("c - Graniastosłup")
+        print("d - Ostrosłup")
+        print("e - Walec")
+        print("f - Stożek")
+        print("g - Kula")
+        print("x - Powrót")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "x":
+            break
+
+        elif inp == "a":
+            a = float(input("a = "))
+            print("Objętość sześcianu =", v_szescianu(a))
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Objętość prostopadłościanu =", v_prostopadloscianu(a,b,c))
+
+        elif inp == "c":
+            pp = float(input("Pole podstawy = "))
+            h = float(input("h = "))
+            print("Objętość graniastosłupa =", v_graniastoslupa(pp,h))
+
+        elif inp == "d":
+            pp = float(input("Pole podstawy = "))
+            h = float(input("h = "))
+            print("Objętość ostrosłupa =", v_ostroslupa(pp,h))
+
+        elif inp == "e":
+            r = float(input("r = "))
+            h = float(input("h = "))
+            print("Objętość walca =", v_walca(r,h))
+
+        elif inp == "f":
+            r = float(input("r = "))
+            h = float(input("h = "))
+            print("Objętość stożka =", v_stozka(r,h))
+
+        elif inp == "g":
+            r = float(input("r = "))
+            print("Objętość kuli =", v_kuli(r))
+
+        else:
+            print("Nie ma takiej opcji")
+
+
+def bryly():
+    while True:
+        print("a - Pole powierzchni brył")
+        print("b - Objętość brył")
+        print("x - Powrót")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "a":
+            jakie_pc()
+        elif inp == "b":
+            jakie_v()
+        elif inp == "x":
+            break
+        else:
+            print("Nie ma takiej opcji")
+
+
+
+
+WARYNKI
+
+
+
+
+def wysokosc_trojkata(a: float, b: float, c: float) -> float:
+    if a < b+c and b < a+c and c < a+b:
+        return a*3**0.5/2
+    else:
+        return 0
+
+
+def przekatna_kwadratu(a: float, b: float, c: float) -> float:
+    if a < b+c and b < a+c and c < a+b:
+        return a*2**0.5
+    else:
+        return 0
+
+
+def pitagoras(a: float, b: float, c: float) -> float:
+    if a < b+c and b < a+c and c < a+b:
+        return (a**2+b**2)**0.5
+    else:
+        return 0
+
+
+def warunki():
+    while True:
+        print("\n========== WARUNKI ==========")
+        print("a - Wysokość trójkąta równobocznego")
+        print("b - Przekątna kwadratu")
+        print("c - Twierdzenie Pitagorasa")
+        print("x - Powrót")
+
+        inp = input("Wybierz: ").lower().strip()
+
+        if inp == "x":
+            break
+
+        elif inp == "a":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Wysokość trójkąta =", wysokosc_trojkata(a,b,c))
+
+        elif inp == "b":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Przekątna kwadratu =", przekatna_kwadratu(a,b,c))
+
+        elif inp == "c":
+            a = float(input("a = "))
+            b = float(input("b = "))
+            c = float(input("c = "))
+            print("Przeciwprostokątna c =", pitagoras(a,b,c))
+
+        else:
+            print("Nie ma takiej opcji")
